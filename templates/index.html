@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🚗 Car Price Prediction</h1>
+
+<form action="/predict" method="POST">
+
+<input type="text" name="car_name" placeholder="Car Name" required>
+
+<input type="text" name="brand" placeholder="Brand" required>
+
+<input type="text" name="model" placeholder="Model" required>
+
+<input type="number" name="vehicle_age" placeholder="Vehicle Age" required>
+
+<input type="number" name="km_driven" placeholder="Kilometers Driven" required>
+
+<select name="seller_type">
+<option>Individual</option>
+<option>Dealer</option>
+<option>Trustmark Dealer</option>
+</select>
+
+<select name="fuel_type">
+<option>Petrol</option>
+<option>Diesel</option>
+<option>CNG</option>
+<option>LPG</option>
+<option>Electric</option>
+</select>
+
+<select name="transmission_type">
+<option>Manual</option>
+<option>Automatic</option>
+</select>
+
+<input type="number" step="0.1" name="mileage" placeholder="Mileage" required>
+
+<input type="number" step="0.1" name="engine" placeholder="Engine CC" required>
+
+<input type="number" step="0.1" name="max_power" placeholder="Max Power" required>
+
+<input type="number" name="seats" placeholder="Seats" required>
+
+<button type="submit">Predict Price</button>
+
+</form>
+
+<h2>{{ prediction_text }}</h2>
+
+</div>
+
+</body>
+</html>
